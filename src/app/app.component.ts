@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { PsPokeTileComponent } from './ps-poke-tile/ps-poke-tile.component';
+
+import { PsPokeTilesComponent } from './ps-poke-tiles/ps-poke-tiles.component';
+
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,5 @@ import { PsPokeTileComponent } from './ps-poke-tile/ps-poke-tile.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Pokemon Store';
 }

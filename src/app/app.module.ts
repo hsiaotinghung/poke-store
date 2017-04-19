@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { PsPokeTileComponent } from './ps-poke-tile/ps-poke-tile.component';
+import { PsPokeTilesComponent } from './ps-poke-tiles/ps-poke-tiles.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PsPokeTileComponent
+    PsPokeTileComponent,
+    PsPokeTilesComponent
   ],
   imports: [
     BrowserModule,
