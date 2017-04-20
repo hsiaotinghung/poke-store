@@ -4,46 +4,46 @@ export const POKEMONS: Pokemon[] = [
     {
         id: 1,
         name: 'Bulbasaur',
-        imgUrl: 'assets/img/001Bulbasaur.png'
+        imgUrl: 'assets/img/GO001.png'
     },
     {
         id: 2,
         name: 'Ivysaur',
-        imgUrl: 'assets/img/002Ivysaur.png'
+        imgUrl: 'assets/img/GO002.png'
     },
     {
         id: 3,
         name: 'Venusaur',
-        imgUrl: 'assets/img/003Venusaur.png'
+        imgUrl: 'assets/img/GO003.png'
     },
     {
         id: 4,
         name: 'Charmander',
-        imgUrl: 'assets/img/004Charmander.png'
+        imgUrl: 'assets/img/GO004.png'
     },
     {
         id: 5,
         name: 'Charmeleon',
-        imgUrl: 'assets/img/005Charmeleon.png'
+        imgUrl: 'assets/img/GO005.png'
     },
     {
         id: 6,
         name: 'Charizard',
-        imgUrl: 'assets/img/006Charizard.png'
+        imgUrl: 'assets/img/GO006.png'
     },
     {
         id: 7,
         name: 'Squirtle',
-        imgUrl: 'assets/img/007Squirtle.png'
+        imgUrl: 'assets/img/GO007.png'
     },
     {
         id: 8,
         name: 'Wartortle',
-        imgUrl: 'assets/img/008Wartortle.png'
+        imgUrl: 'assets/img/GO008.png'
     },
     {
         id: 9,
         name: 'Blastoise',
-        imgUrl: 'assets/img/009Blastoise.png'
+        imgUrl: 'assets/img/GO009.png'
     },
 ] 
