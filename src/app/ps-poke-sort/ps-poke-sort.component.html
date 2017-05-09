@@ -1,0 +1,9 @@
+<div class="ps-poke-sort">
+  <label class="ps-poke-sort-label">Sort By:
+    <select class="form-control"
+            [formControl]="sortBy"
+            (change)="onChange($event.target.value)">
+      <option *ngFor="let pokeProperty of pokeProperties" [value]="pokeProperty">{{pokeProperty}}</option>
+    </select>
+  </label>
+</div>
