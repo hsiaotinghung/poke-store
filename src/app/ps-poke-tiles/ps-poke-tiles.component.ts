@@ -9,15 +9,15 @@ import { PsPokeTileComponent } from '../ps-poke-tile/ps-poke-tile.component';
   templateUrl: './ps-poke-tiles.component.html',
   styleUrls: ['./ps-poke-tiles.component.css']
 })
-export class PsPokeTilesComponent implements OnDestroy{
+export class PsPokeTilesComponent implements OnInit, OnDestroy {
   pokemons: Pokemon[];
   subscription: Subscription;
-  
+
   constructor(private pokemonService: PokemonService) {
     this.subscription = this.pokemonService.getSortProperty().subscribe(data => {
-      console.log('receive :'+ data);
+      console.log('receive :' + data);
       this.pokemons = this.pokemonService.getSortedPokemons(data);
-    });    
+    });
   }
 
   getPokemons(): void {
@@ -27,7 +27,7 @@ export class PsPokeTilesComponent implements OnDestroy{
   ngOnInit() {
     this.getPokemons();
   }
-  
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

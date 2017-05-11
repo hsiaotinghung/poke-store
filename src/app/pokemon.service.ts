@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
-import * as _ from "lodash"
+import * as _ from 'lodash';
 
 import { Pokemon } from './pokemon';
-import { POKEMONS } from './mock-pokemons'; 
+import { POKEMONS } from './mock-pokemons';
 
 @Injectable()
 export class PokemonService {
@@ -20,10 +20,10 @@ export class PokemonService {
   }
 
   sendSortPropertyEvt(selectedProperty: string) {
-    console.log('send: '+ selectedProperty);
+    console.log('send: ' + selectedProperty);
     this.subject.next(selectedProperty);
   }
-  
+
   getSortProperty(): Observable<string> {
     return this.subject.asObservable();
   }

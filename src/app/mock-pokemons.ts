@@ -46,4 +46,4 @@ export const POKEMONS: Pokemon[] = [
         name: 'Blastoise',
         imgUrl: 'assets/img/GO009.png'
     },
-] 
+];
