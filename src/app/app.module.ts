@@ -10,13 +10,15 @@ import { PsPokeTilesComponent } from './ps-poke-tiles/ps-poke-tiles.component';
 import { PsPokeSortComponent } from './ps-poke-sort/ps-poke-sort.component';
 
 import { PokemonService } from './pokemon.service';
+import { PsPokeFilterComponent } from './ps-poke-filter/ps-poke-filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PsPokeTileComponent,
     PsPokeTilesComponent,
-    PsPokeSortComponent
+    PsPokeSortComponent,
+    PsPokeFilterComponent
   ],
   imports: [
     BrowserModule,
