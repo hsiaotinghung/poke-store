@@ -1,5 +1,8 @@
 <div class="ps-poke-filter">
   <div *ngFor="let pokeType of pokemonTypes; let i=index">
-    <input type="checkbox" [formControl]="pokeFilter"/>{{pokeType}}
+    <input type="checkbox"
+           name="{{pokeType}}"
+           [formControl]="pokeFilter"
+           (change)="onChange($event.target)"/>{{pokeType}}
   </div>
 </div>

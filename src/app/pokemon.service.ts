@@ -8,7 +8,8 @@ import { POKEMONS } from './mock-pokemons';
 
 @Injectable()
 export class PokemonService {
-  private subject = new Subject<string>();
+  private sortSubject = new Subject<string>();
+  private filterSubject = new Subject<any>();
   constructor() { }
 
   getPokemons(): Pokemon[] {
@@ -19,12 +20,30 @@ export class PokemonService {
     return _.sortBy(POKEMONS, selectedProperty);
   }
 
-  sendSortPropertyEvt(selectedProperty: string) {
-    console.log('send: ' + selectedProperty);
-    this.subject.next(selectedProperty);
+  getFilteredPokemons(pokemons: Pokemon[], filteredProperties: string[]) {
+    return _.isEmpty(filteredProperties) ?
+            pokemons :
+            pokemons.filter(function(pokemon){
+              return _.intersection(pokemon.type, filteredProperties).length !== 0;
+            });
   }
 
-  getSortProperty(): Observable<string> {
-    return this.subject.asObservable();
+  sendSortPropertyEvt(selectedProperty: string) {
+    this.sortSubject.next(selectedProperty);
+  }
+
+  getSortPropertyObs(): Observable<string> {
+    return this.sortSubject.asObservable();
+  }
+
+  sendFilterEvt(filterProperty: string, isChecked: Boolean) {
+    this.filterSubject.next({
+      prop: filterProperty,
+      isChecked: isChecked
+    });
+  }
+
+  getFilterObs(): Observable<any> {
+    return this.filterSubject.asObservable();
   }
 }

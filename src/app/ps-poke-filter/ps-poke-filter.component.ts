@@ -11,9 +11,14 @@ import { PokemonTypes } from '../pokemon';
 export class PsPokeFilterComponent implements OnInit {
   pokemonTypes = PokemonTypes;
   pokeFilter = new FormControl();
-  constructor() { }
+
+  constructor(private pokemonService: PokemonService) { }
 
   ngOnInit() {
+  }
+
+  onChange(e) {
+    this.pokemonService.sendFilterEvt(e.name, e.checked);
   }
 
 }

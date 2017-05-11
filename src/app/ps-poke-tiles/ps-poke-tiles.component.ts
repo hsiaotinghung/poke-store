@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { Pokemon } from '../pokemon';
 import { PokemonService } from '../pokemon.service';
 import { PsPokeTileComponent } from '../ps-poke-tile/ps-poke-tile.component';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'ps-poke-tiles',
@@ -11,17 +12,31 @@ import { PsPokeTileComponent } from '../ps-poke-tile/ps-poke-tile.component';
 })
 export class PsPokeTilesComponent implements OnInit, OnDestroy {
   pokemons: Pokemon[];
-  subscription: Subscription;
+  filteredPokemons: Pokemon[];
+  filteredProperties: string[];
+  sortSubscription: Subscription;
+  filterSubscription: Subscription;
 
   constructor(private pokemonService: PokemonService) {
-    this.subscription = this.pokemonService.getSortProperty().subscribe(data => {
-      console.log('receive :' + data);
+    this.sortSubscription = this.pokemonService.getSortPropertyObs().subscribe(data => {
       this.pokemons = this.pokemonService.getSortedPokemons(data);
+      this.filteredPokemons = this.pokemonService.getFilteredPokemons(this.pokemons, this.filteredProperties);
+    });
+
+    this.filterSubscription = this.pokemonService.getFilterObs().subscribe(data => {
+      if (data.isChecked) {
+        this.filteredProperties.push(data.prop);
+      } else {
+        _.pull(this.filteredProperties, data.prop);
+      }
+      this.filteredPokemons = this.pokemonService.getFilteredPokemons(this.pokemons, this.filteredProperties);
     });
   }
 
   getPokemons(): void {
     this.pokemons = this.pokemonService.getPokemons();
+    this.filteredProperties = [];
+    this.filteredPokemons = this.pokemonService.getFilteredPokemons(this.pokemons, this.filteredProperties);
   }
 
   ngOnInit() {
@@ -29,6 +44,7 @@ export class PsPokeTilesComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    this.sortSubscription.unsubscribe();
+    this.filterSubscription.unsubscribe();
   }
 }
