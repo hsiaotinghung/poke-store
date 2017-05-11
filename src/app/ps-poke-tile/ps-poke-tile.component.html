@@ -1,7 +1,8 @@
-<div>
+<div class="poke-tile">
+  <div class="poke-tile__id">#{{pokemon.id}}</div>
   <img class="poke-tile__img" [src]="pokemon.imgUrl">
-  <div>
-    <a>id: {{pokemon.id}}</a>
-    <p>name: {{pokemon.name}}</p>
+  <div class="poke-tile__info">
+    
+    <span class="poke-tile__name">{{pokemon.name}}</span>
   </div>
 </div>
