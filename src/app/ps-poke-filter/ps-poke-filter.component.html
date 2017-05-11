@@ -1,0 +1,5 @@
+<div class="ps-poke-filter">
+  <div *ngFor="let pokeType of pokemonTypes; let i=index">
+    <input type="checkbox" [formControl]="pokeFilter"/>{{pokeType}}
+  </div>
+</div>
