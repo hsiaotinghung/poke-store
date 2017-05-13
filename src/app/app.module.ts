@@ -11,6 +11,7 @@ import { PsPokeSortComponent } from './ps-poke-sort/ps-poke-sort.component';
 
 import { PokemonService } from './pokemon.service';
 import { PsPokeFilterComponent } from './ps-poke-filter/ps-poke-filter.component';
+import { PsHeaderComponent } from './ps-header/ps-header.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PsPokeFilterComponent } from './ps-poke-filter/ps-poke-filter.component
     PsPokeTileComponent,
     PsPokeTilesComponent,
     PsPokeSortComponent,
-    PsPokeFilterComponent
+    PsPokeFilterComponent,
+    PsHeaderComponent
   ],
   imports: [
     BrowserModule,
