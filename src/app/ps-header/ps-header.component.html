@@ -1,25 +1,26 @@
-<header class="jumbotron">
-  <div class="ps-header-logo">
-    <!--<img src="assets/icons/pikachu.png"/>-->
+<header class="ps-header jumbotron">
+  <div class="container">
+    <div class="ps-header-logo">
+    </div>
+    <h1 class="ps-header__h1">Angular Pokemon Store</h1>
+    <section class="ps-header__intro">
+      <p class="ps-header__intro-p lead"> 
+        Welcome to Pokemon Store! This is an Angular web application. Please Click About for more details. 
+      </p>
+      <p class="ps-header__intro-p lead">
+        In the Poke Store, you can interact with these pokemon tiles. Click on the tile for more details of the pokemon.
+        You can also use SortBy dropdown or type filter to find your favorite pokemons. 
+      </p>
+    </section>
+    <nav class="row">
+      <ul class="nav nav-pills nav-fill justify-content-center col-12 col-md-4 offset-md-8">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/store" routerLinkActive="active">Poke Store</a>
+        </li>
+      </ul>  
+    </nav>
   </div>
-  <h1 class="ps-header__h1">Angular Pokemon Store</h1>
-  <section class="ps-header__intro">
-    <p class="ps-header__intro-p lead"> 
-      Welcome to Pokemon Store! This is an Angular web application. Please Click About for more details. 
-    </p>
-    <p class="ps-header__intro-p lead">
-      In the Poke Store, you can interact with these pokemon tiles. Click on the tile for more details of the pokemon.
-      You can also use SortBy dropdown or type filter to find your favorite pokemons. 
-    </p>
-  </section>
-  <nav class="row">
-    <ul class="nav nav-pills nav-fill justify-content-center col-12 col-md-4 offset-md-8">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/store" routerLinkActive="active">Poke Store</a>
-      </li>
-    </ul>  
-</nav>
 </header>
