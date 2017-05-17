@@ -33,7 +33,7 @@ const appRoutes: Routes = [
     redirectTo: '/store',
     pathMatch: 'full'
   },
-  { 
+  {
     path: '**',
     redirectTo: '/store'
   }

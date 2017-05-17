@@ -20,7 +20,9 @@ export class PsPokeFilterComponent implements OnInit {
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit() {
-     this.myOptions = _.map(this.pokemonTypes, (pokeType) => { return {name: pokeType, id: pokeType}});
+    this.myOptions = _.map(this.pokemonTypes, (pokeType) => {
+      return {name: pokeType, id: pokeType};
+    });
   }
 
   onChange(e) {

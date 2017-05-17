@@ -53,6 +53,6 @@ export class PokemonService {
   }
 
   getFilterDropdownObs(): Observable<any> {
-    return this.filterDropdownSubject.asObservable()
-  }  
+    return this.filterDropdownSubject.asObservable();
+  }
 }

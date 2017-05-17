@@ -23,7 +23,7 @@ export const POKEMONS: Pokemon[] = [
         imgUrl: 'assets/img/GO003.png',
         type: ['grass', 'poison'],
         height: 2.0,
-        weight: 100.0     
+        weight: 100.0
     },
     {
         id: 4,
