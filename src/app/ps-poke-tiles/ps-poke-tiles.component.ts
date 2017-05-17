@@ -16,6 +16,7 @@ export class PsPokeTilesComponent implements OnInit, OnDestroy {
   filteredProperties: string[];
   sortSubscription: Subscription;
   filterSubscription: Subscription;
+  filterDropdownSubscription: Subscription;
 
   constructor(private pokemonService: PokemonService) {
     this.sortSubscription = this.pokemonService.getSortPropertyObs().subscribe(data => {
@@ -30,6 +31,10 @@ export class PsPokeTilesComponent implements OnInit, OnDestroy {
         _.pull(this.filteredProperties, data.prop);
       }
       this.filteredPokemons = this.pokemonService.getFilteredPokemons(this.pokemons, this.filteredProperties);
+    });
+
+    this.filterDropdownSubscription = this.pokemonService.getFilterDropdownObs().subscribe(data => {
+      this.filteredPokemons = this.pokemonService.getFilteredPokemons(this.pokemons, data);
     });
   }
 
@@ -46,5 +51,6 @@ export class PsPokeTilesComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.sortSubscription.unsubscribe();
     this.filterSubscription.unsubscribe();
+    this.filterDropdownSubscription.unsubscribe();
   }
 }

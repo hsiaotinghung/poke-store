@@ -10,6 +10,7 @@ import { POKEMONS } from './mock-pokemons';
 export class PokemonService {
   private sortSubject = new Subject<string>();
   private filterSubject = new Subject<any>();
+  private filterDropdownSubject = new Subject <any>();
   constructor() { }
 
   getPokemons(): Pokemon[] {
@@ -46,4 +47,12 @@ export class PokemonService {
   getFilterObs(): Observable<any> {
     return this.filterSubject.asObservable();
   }
+
+  sendFilterDropdownEvt(filterProperties: string[]) {
+    this.filterDropdownSubject.next(filterProperties);
+  }
+
+  getFilterDropdownObs(): Observable<any> {
+    return this.filterDropdownSubject.asObservable()
+  }  
 }

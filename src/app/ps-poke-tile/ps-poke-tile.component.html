@@ -1,8 +1,36 @@
-<div class="poke-tile">
+<div class="poke-tile" data-toggle="modal" [attr.data-target]="pokeDetailsClass">
   <div class="poke-tile__id">#{{pokemon.id}}</div>
   <img class="poke-tile__img" [src]="pokemon.imgUrl">
   <div class="poke-tile__info">
-    
     <span class="poke-tile__name">{{pokemon.name}}</span>
+  </div>
+</div>
+
+<div class="modal fade" [id]="pokeDetailsId" tabindex="-1" role="dialog" aria-labelledby="pokemondetails" aria-hidden="true">
+  <div class="modal-dialog poke-details__modal" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title poke-details__title" id="exampleModalLabel">#{{pokemon.id}} {{pokemon.name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body row">
+        <div class="poke-details__img-outer col-12 col-md-6">
+           <img class="poke-details__img"[src]="pokemon.imgUrl">
+        </div>
+        <div class="poke-details__info col-12 col-md-6">
+          <div class="poke-details__info-title">Pokemon details</div>
+          <div><span class="poke-details__label">Name</span> {{pokemon.name}} </div>
+          <div><span class="poke-details__label">Type</span><span *ngFor="let type of pokemon.type"> {{type}} </span></div>
+          <div><span class="poke-details__label">Height</span> {{pokemon.height}} m</div>
+          <div><span class="poke-details__label">Weight</span> {{pokemon.weight}} kg</div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 </div>

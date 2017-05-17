@@ -1,0 +1,15 @@
+.ps-header {
+    &__h1 {
+        color: #2980b9;
+    }
+    
+    &__intro {
+
+        &-p {
+
+            @media screen and (max-width: 540px) {
+                font-size: 1rem;
+            }
+        }
+    }
+}

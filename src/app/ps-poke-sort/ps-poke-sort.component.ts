@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 import { PokemonService } from '../pokemon.service';
@@ -9,7 +9,6 @@ import { PokemonService } from '../pokemon.service';
   styleUrls: ['./ps-poke-sort.component.css']
 })
 export class PsPokeSortComponent implements OnInit {
-  @Output() onSelected = new EventEmitter<string>();
   sortBy = new FormControl();
   pokeProperties = ['id', 'name'];
   constructor(private pokemonService: PokemonService) { }

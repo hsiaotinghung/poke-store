@@ -3,6 +3,8 @@ export class Pokemon {
     name: string;
     imgUrl: string;
     type: string[];
+    height: number;
+    weight: number;
 }
 
 export const PokemonTypes: string[] = [

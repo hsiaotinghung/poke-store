@@ -1,8 +1,14 @@
 <div class="ps-poke-filter">
-  <div *ngFor="let pokeType of pokemonTypes; let i=index">
+  <div class="lead">Show Pokemons with type: </div>
+  <div class="hidden-xs-down"
+       *ngFor="let pokeType of pokemonTypes; let i=index">
     <input type="checkbox"
            name="{{pokeType}}"
            [formControl]="pokeFilter"
            (change)="onChange($event.target)"/> {{ pokeType }}
   </div>
+  <ss-multiselect-dropdown class="hidden-sm-up" 
+                           [options]="myOptions"
+                           [(ngModel)]="optionsModel"
+                           (ngModelChange)="onDropdownChange($event)"></ss-multiselect-dropdown>
 </div>
