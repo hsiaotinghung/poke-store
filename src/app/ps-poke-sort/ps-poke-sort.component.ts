@@ -10,7 +10,7 @@ import { PokemonService } from '../pokemon.service';
 })
 export class PsPokeSortComponent implements OnInit {
   sortBy = new FormControl();
-  pokeProperties = ['id', 'name'];
+  pokeProperties = ['id', 'name', 'weight', 'height'];
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit() {
