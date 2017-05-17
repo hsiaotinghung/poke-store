@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PsPokeTilesComponent } from '../ps-poke-tiles/ps-poke-tiles.component';
+import { PsPokeSortComponent } from '../ps-poke-sort/ps-poke-sort.component';
+import { PsPokeFilterComponent } from '../ps-poke-filter/ps-poke-filter.component';
 
 @Component({
   selector: 'ps-store',

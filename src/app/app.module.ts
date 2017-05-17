@@ -32,6 +32,10 @@ const appRoutes: Routes = [
     path: '',
     redirectTo: '/store',
     pathMatch: 'full'
+  },
+  { 
+    path: '**',
+    redirectTo: '/store'
   }
 ];
 
